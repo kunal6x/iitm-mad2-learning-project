@@ -88,3 +88,10 @@ For every fresh session, inspect this handoff and the final plan, then continue 
 - Return messages changed to strings rather than previous Boolean contract; decide and consistently test interface, prefer booleans in reusable domain method and messages at UI boundary.
 - Important execution trace: with input 2, outputs 5, then 3, 4, successful status. With input abc, booking stays 5 and later cancel(1) lowers booked count to 4, so print sequence includes 5, 5, 6, error status.
 - These points were explained but student has not yet independently demonstrated corrected I/O separation or scoped except. Next teaching checkpoint: have student run/refactor corrected function and then initiate first simple Flask API route, one concept at a time.
+
+## Learner evidence — 18 October 2026: first Flask routes
+- Student wrote, unassisted, a syntactically plausible Flask application importing `Flask,jsonify`, creating `Flask(__name__)`, declaring `@app.get("/api/health")` and `@app.get("/api/trek")`, returning literal dictionaries via `jsonify`, and starting dev server under main guard.
+- Submitted response payload keys: `{"stsu":"ok"}` (expected `status`); trek payload uses `name`, `capa`, `bo` (practice contract expected `name`, `capacity`, `booked`). Explain valid JSON versus frontend/API-contract mismatch.
+- No actual Flask server output, browser responses or HTTP status observations have yet been supplied by student. Mark first route implementation written, runtime verification pending. Never equate screenshot/code with successful run.
+- Next lesson: dynamic GET route `/api/trek/<int:trek_id>`; data in list of dictionaries; search by id; return `jsonify(data)` for match and explicit 404 JSON response otherwise. Student should write the handler rather than copy full solution. Follow with POST JSON request body, validation and status codes; then persistence/SQLite when ready.
+- Reviewed `__name__`, Flask app instance, decorator-based route registration, `jsonify` and API contract. Do not record these as independently explained until tested.
