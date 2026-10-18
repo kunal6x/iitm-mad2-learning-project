@@ -48,3 +48,13 @@ Date, module, subtopic, learner's original code/artifact, executed output, mista
 
 ## Continuity
 For every fresh session, inspect this handoff and the final plan, then continue from the first uncompleted verified checkpoint. GitHub updates only during active interaction; no background auto sync.
+
+## Live lesson update — 18 October 2026 (after Session 0)
+- Student reports Python installed and functioning, VS Code file created. The actual command output has not been inspected.
+- Student explained `print("5 + 5")` is literal string; correctly distinguished `int` for 10 and `str` for "10".
+- Student authored a Python booking capacity conditional with correct broad decision logic; `&&` was used incorrectly and corrected to Python `and`.
+- Mini-viva `and/or/not` was initially incorrect, then student explained all three accurately. Keep a brief delayed retrieval check.
+- Student accurately predicted `for i in range(2,5): print(i*2)` gives 4, 6, 8; initially unsure of newline behavior, now taught print default newline. The student described while termination accurately although used loose wording that it has no condition; clarified that while explicitly tests a condition.
+- Learner says basic variables, conditions and loops are familiar and requests a faster pace. Do not keep administering trivial repeated recall, but **do not mark these mastered at level 3 until independent running code and negative tests are demonstrated**.
+- Lesson now underway: lists, dictionaries, lists of dictionaries, functions, `return` vs `print`, using trekking examples. Next: student-written menu-less trek availability/search mini challenge, test cases and a small new variant; then modularize into functions and advance to OOP/Flask as appropriate.
+- No graded project source created or pushed.
