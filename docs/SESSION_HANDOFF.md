@@ -58,3 +58,10 @@ For every fresh session, inspect this handoff and the final plan, then continue 
 - Learner says basic variables, conditions and loops are familiar and requests a faster pace. Do not keep administering trivial repeated recall, but **do not mark these mastered at level 3 until independent running code and negative tests are demonstrated**.
 - Lesson now underway: lists, dictionaries, lists of dictionaries, functions, `return` vs `print`, using trekking examples. Next: student-written menu-less trek availability/search mini challenge, test cases and a small new variant; then modularize into functions and advance to OOP/Flask as appropriate.
 - No graded project source created or pushed.
+
+## Learner evidence — 18 October 2026: list/dictionary/function exercise
+- User independently wrote a Python function `findt(trek, seats)` returning available trek names from a list of dictionaries, using loop, comparison, `append`, `return`; tested `findt(treks, 33)` and obtained empty list.
+- Relevant error: code used global `treks` rather than the passed parameter `trek`, and reused `trek` as a loop variable, shadowing the parameter. Teach parameter-local scope and a contrasting dataset test.
+- Missing edge guard: `seats <= 0` should return `[]`; negative seat request in student code incorrectly matches all treks.
+- Dict missing-key viva: clarified `d["missing"]` raises `KeyError` vs `d.get("missing")` returns `None` or chosen default. Do not record as independently passed until student retests.
+- Next: brief parameter-scope / mutation exercise and then OOP classes `Trek`, `Booking`, `User`; keep user code student-authored. Faster pacing justified by demonstrated competence but verify scopes and error handling before transition to Flask.
