@@ -80,3 +80,11 @@ For every fresh session, inspect this handoff and the final plan, then continue 
 - For `trek("k",10,5)`, `booked(2)`, `cancel(1)` submitted code's predicted prints are 5, 3, 4, True. These values were reasoned from submitted code, not verified from student's terminal execution.
 - Small style issue: final `return False` after if/elif/else each returns is unreachable. Preferred clearer naming `Trek`, `capacity`, `booked_count`, methods `remaining`, `book`, `cancel`. Teach this without treating style as functional error.
 - Mark booking-and-cancellation challenge logically correct, independent execution/output still to be verified. Next: exception handling (`ValueError`, `try/except`) and constructor invariants; then move promptly into first Flask route/client-server request once learner follows core patterns.
+
+## Learner evidence — 18 October 2026: exception-handling attempt
+- Student submitted own `trek` class with working booking capacity/cancellation logic and newly introduced `try/except` plus `int(input("num:"))` inside `booked(self, seats)`.
+- Design issue: `booked(2)` ignores argument when it overwrites `seats` with user input; separate interactive I/O from state-changing method so it can be called from Flask.
+- Redundant `type(seats) != int` after successful `int()`; bare `except:` catches unrelated errors and hides bugs; catch `ValueError` at input boundary.
+- Return messages changed to strings rather than previous Boolean contract; decide and consistently test interface, prefer booleans in reusable domain method and messages at UI boundary.
+- Important execution trace: with input 2, outputs 5, then 3, 4, successful status. With input abc, booking stays 5 and later cancel(1) lowers booked count to 4, so print sequence includes 5, 5, 6, error status.
+- These points were explained but student has not yet independently demonstrated corrected I/O separation or scoped except. Next teaching checkpoint: have student run/refactor corrected function and then initiate first simple Flask API route, one concept at a time.
