@@ -73,3 +73,10 @@ For every fresh session, inspect this handoff and the final plan, then continue 
 - Corrected teaching example used `self.booked` attribute distinct from `book()`, `self.remain()`, `self.booked += seats`, Boolean returns; traced state independently per instance.
 - Student has NOT yet demonstrated fully corrected code, so mastery of instance method calls and mutable instance state is pending. Next checkpoint: student predicts `t1.book(1)` after filling slots, explains `self` and `return`; then writes a modified booking method with `cancel(seats)` guard (or similarly sized own-code extension), tests and explains.
 - Keep explanation compact but rigorous, answer actual error execution order, progress toward inheritance/exceptions and Flask once OOP is demonstrated.
+
+## Learner evidence — 18 October 2026: OOP booking/cancellation completed
+- Student submitted an independently written `trek` class with correct constructor state, `remain()`, `booked(seats)` and `cancel(seats)`. Earlier method shadowing removed by changing booking method from `book()` to `booked()`, while numeric instance attribute remains `self.book`; `self.remain()` properly called.
+- Booking: guards invalid requests and overcapacity, updates `self.book` by accepted seat count, returns Boolean. Cancellation: rejects nonpositive/excess cancellation, decreases booked count on success and returns Boolean.
+- For `trek("k",10,5)`, `booked(2)`, `cancel(1)` submitted code's predicted prints are 5, 3, 4, True. These values were reasoned from submitted code, not verified from student's terminal execution.
+- Small style issue: final `return False` after if/elif/else each returns is unreachable. Preferred clearer naming `Trek`, `capacity`, `booked_count`, methods `remaining`, `book`, `cancel`. Teach this without treating style as functional error.
+- Mark booking-and-cancellation challenge logically correct, independent execution/output still to be verified. Next: exception handling (`ValueError`, `try/except`) and constructor invariants; then move promptly into first Flask route/client-server request once learner follows core patterns.
