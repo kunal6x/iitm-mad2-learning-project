@@ -65,3 +65,11 @@ For every fresh session, inspect this handoff and the final plan, then continue 
 - Missing edge guard: `seats <= 0` should return `[]`; negative seat request in student code incorrectly matches all treks.
 - Dict missing-key viva: clarified `d["missing"]` raises `KeyError` vs `d.get("missing")` returns `None` or chosen default. Do not record as independently passed until student retests.
 - Next: brief parameter-scope / mutation exercise and then OOP classes `Trek`, `Booking`, `User`; keep user code student-authored. Faster pacing justified by demonstrated competence but verify scopes and error handling before transition to Flask.
+
+## Learner evidence — 18 October 2026: OOP booking class
+- Student wrote class `trek` with constructor initializing `name`, `slot`, `book`; an instance `remain(self)` method calculating unbooked slots; and attempted `book(self, seats)` with early input rejection and state update.
+- Critical bug: `self.book = book` instance attribute **shadows** same-named method `book`; `t1.book(3)` raises `TypeError: 'int' object is not callable` after initial `t1.remain()` prints 3.
+- Further bugs: bare `remain()` would be `NameError` once the shadowing is fixed (use `self.remain()`); successful path missing `return True`, capacity-failure path missing `return False`; rejection used a string rather than the exercise's Boolean return contract.
+- Corrected teaching example used `self.booked` attribute distinct from `book()`, `self.remain()`, `self.booked += seats`, Boolean returns; traced state independently per instance.
+- Student has NOT yet demonstrated fully corrected code, so mastery of instance method calls and mutable instance state is pending. Next checkpoint: student predicts `t1.book(1)` after filling slots, explains `self` and `return`; then writes a modified booking method with `cancel(seats)` guard (or similarly sized own-code extension), tests and explains.
+- Keep explanation compact but rigorous, answer actual error execution order, progress toward inheritance/exceptions and Flask once OOP is demonstrated.
