@@ -7,11 +7,12 @@
 **Learning objective:** The student independently writes, understands, runs, troubleshoots, modifies and explains every important part of the project and prepares for both viva levels. Do not treat generated code or copy-paste as demonstrated competence.
 
 ## Start here
-1. [Official source index and verification status](docs/SOURCE_INDEX.md)
-2. [Learning and implementation roadmap](docs/MASTER_ROADMAP.md)
-3. [Requirements and compliance matrix](docs/REQUIREMENTS_MATRIX.md)
-4. [Learning and viva protocol](docs/LEARNING_PROTOCOL.md)
-5. [Latest session handoff](docs/SESSION_HANDOFF.md)
+1. [FINAL zero-to-project-and-viva plan (18 October 2026)](docs/FINAL_ZERO_TO_VIVA_PLAN.md)
+2. [Official source index and verification status](docs/SOURCE_INDEX.md)
+3. [Learning and implementation roadmap](docs/MASTER_ROADMAP.md)
+4. [Requirements and compliance matrix](docs/REQUIREMENTS_MATRIX.md)
+5. [Learning and viva protocol](docs/LEARNING_PROTOCOL.md)
+6. [Latest session handoff](docs/SESSION_HANDOFF.md)
 
 ## Strict GitHub scope
 This repository (`kunal6x/iitm-mad2-learning-project`) is the **only authorized GitHub repository for this learning effort**. Do **not** read, search, modify or otherwise interact with any other repositories. Other repositories contain unrelated work by senior engineers.
